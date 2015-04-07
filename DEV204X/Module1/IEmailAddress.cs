@@ -12,7 +12,7 @@ namespace DEV204X.Module1
     /// </summary>
     internal interface IEmailAddress
     {
-        string Local { get; set; }
-        string Domain { get; set; }
+        string Local { get; }
+        string Domain { get; }
     }
 }

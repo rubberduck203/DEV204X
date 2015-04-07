@@ -8,11 +8,11 @@ namespace DEV204X.Module1
 {
     internal interface IAddress
     {
-        string Line1 { get; set; }
-        string Line2 { get; set; }
-        string City { get; set; }
-        string State { get; set; }
-        string ZipCode { get; set; }
-        string Country { get; set; }
+        string Line1 { get; }
+        string Line2 { get; }
+        string City { get; }
+        string State { get; }
+        int ZipCode { get; }
+        string Country { get; }
     }
 }

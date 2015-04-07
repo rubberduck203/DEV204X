@@ -16,7 +16,7 @@ namespace DEV204X.Module1
 
     internal interface IStudent : IPerson
     {
-        string ProgramOfStudy { get; set; }
-        DegreeType PursuedDegree { get; set; }
+        string ProgramOfStudy { get; }
+        DegreeType PursuedDegree { get; }
     }
 }

@@ -8,10 +8,10 @@ namespace DEV204X.Module1
 {
     internal interface IClass
     {
-        string Name { get; set; }
-        decimal CreditHours { get; set; }
-        string Building { get; set; }
-        string Room { get; set; }
-        DateTime ScheduledTime { get; set; }
+        string Name { get; }
+        decimal CreditHours { get; }
+        string Building { get; }
+        string Room { get; }
+        DateTime ScheduledTime { get; }
     }
 }

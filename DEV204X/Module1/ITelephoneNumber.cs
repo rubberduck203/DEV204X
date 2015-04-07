@@ -12,9 +12,9 @@ namespace DEV204X.Module1
     /// </summary>
     internal interface ITelephoneNumber
     {
-        int CountryCode { get; set; }
-        int AreaCode { get; set; }
-        int Exchange { get; set; }
-        int SubscriberNumber { get; set; }
+        int CountryCode { get; }
+        int AreaCode { get; }
+        int Exchange { get; }
+        int SubscriberNumber { get; }
     }
 }

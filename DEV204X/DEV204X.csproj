@@ -35,6 +35,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Module1\Address.cs" />
+    <Compile Include="Module1\Class.cs" />
+    <Compile Include="Module1\ContactInfo.cs" />
+    <Compile Include="Module1\EmailAddress.cs" />
     <Compile Include="Module1\IAddress.cs" />
     <Compile Include="Module1\IClass.cs" />
     <Compile Include="Module1\IContactInfo.cs" />
@@ -42,6 +46,11 @@
     <Compile Include="Module1\IPerson.cs" />
     <Compile Include="Module1\IStudent.cs" />
     <Compile Include="Module1\ITelephoneNumber.cs" />
+    <Compile Include="Module1\Person.cs" />
+    <Compile Include="Module1\Professor.cs" />
+    <Compile Include="Module1\Program.cs" />
+    <Compile Include="Module1\Student.cs" />
+    <Compile Include="Module1\TelephoneNumber.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
