@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DEV204X.Module1
+﻿namespace DEV204X.Module1
 {
     internal class EmailAddress : IEmailAddress
     {
@@ -19,7 +13,7 @@ namespace DEV204X.Module1
 
         public EmailAddress(string email)
         {
-            var addressParts = email.Split(new[] {'@'});
+            var addressParts = email.Split('@');
             this.Local = addressParts[0];
             this.Domain = addressParts[1];
         }
