@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{77773B23-CD6D-4E7F-B72E-863CD6200812}</ProjectGuid>
+    <ProjectGuid>89846164-81dc-4cfa-937f-798d5f55aa30</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DEV204X</RootNamespace>
-    <AssemblyName>DEV204X</AssemblyName>
+    <RootNamespace>ConsoleApplication1</RootNamespace>
+    <AssemblyName>ConsoleApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,32 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Module1\Address.cs" />
-    <Compile Include="Module1\Class.cs" />
-    <Compile Include="Module1\ContactInfo.cs" />
-    <Compile Include="Module1\EmailAddress.cs" />
-    <Compile Include="Module1\IAddress.cs" />
-    <Compile Include="Module1\IClass.cs" />
-    <Compile Include="Module1\IContactInfo.cs" />
-    <Compile Include="Module1\IEmailAddress.cs" />
-    <Compile Include="Module1\IPerson.cs" />
-    <Compile Include="Module1\IStudent.cs" />
-    <Compile Include="Module1\ITelephoneNumber.cs" />
-    <Compile Include="Module1\Person.cs" />
-    <Compile Include="Module1\Professor.cs" />
-    <Compile Include="Module1\Program.cs" />
-    <Compile Include="Module1\Student.cs" />
-    <Compile Include="Module1\TelephoneNumber.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-﻿namespace DEV204X.Module1
+﻿namespace DEV204X
 {
     /// <summary>
     /// Telephone number using the North American Numbering Plan

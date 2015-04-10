@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DEV204X.Module1
+namespace DEV204X
 {
     internal class Program
     {

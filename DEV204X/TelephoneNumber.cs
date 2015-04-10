@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DEV204X.Module1
+namespace DEV204X
 {
     internal class TelephoneNumber : ITelephoneNumber
     {

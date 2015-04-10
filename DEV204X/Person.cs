@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DEV204X.Module1
+namespace DEV204X
 {
     internal class Person : IPerson
     {

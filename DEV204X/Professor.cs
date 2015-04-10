@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DEV204X.Module1
+namespace DEV204X
 {
     //Professor could technically be a Person, but it's nice to have the typing for reflection
     internal class Professor : Person

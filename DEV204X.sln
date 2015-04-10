@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEV204X", "DEV204X\DEV204X.csproj", "{77773B23-CD6D-4E7F-B72E-863CD6200812}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module1", "DEV204X\Module1.csproj", "{77773B23-CD6D-4E7F-B72E-863CD6200812}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{028D28E7-A639-458B-83CE-E99B55EC914F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module2", "Module2\Module2.csproj", "{8A5EB1E1-9619-48CD-9080-1CD94968EAC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{028D28E7-A639-458B-83CE-E99B55EC914F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{028D28E7-A639-458B-83CE-E99B55EC914F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{028D28E7-A639-458B-83CE-E99B55EC914F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5EB1E1-9619-48CD-9080-1CD94968EAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5EB1E1-9619-48CD-9080-1CD94968EAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5EB1E1-9619-48CD-9080-1CD94968EAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5EB1E1-9619-48CD-9080-1CD94968EAC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
