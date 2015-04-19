@@ -24,9 +24,13 @@ namespace Module5
 
     internal class Student : Person
     {
+        internal static int TotalCount;
+
         internal Student(string first, string last, DateTime dateOfBirth)
             : base(first, last, dateOfBirth)
-        { }
+        {
+            TotalCount = TotalCount + 1;
+        }
     }
 
     internal class Teacher : Person
