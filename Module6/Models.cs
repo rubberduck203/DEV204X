@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Module5
+namespace Module6
 {
-    internal class Student
+    internal abstract class Person
     {
-        internal static int TotalCount;
-
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public DateTime DateOfBirth { get; private set; }
 
-        internal Student(string first, string last, DateTime dateOfBirth)
+        protected Person(string first, string last, DateTime dateOfBirth)
         {
-            TotalCount = TotalCount + 1;
-
             this.FirstName = first;
             this.LastName = last;
             this.DateOfBirth = dateOfBirth;
@@ -26,23 +22,22 @@ namespace Module5
         }
     }
 
-    internal class Teacher
+    internal class Student : Person
     {
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public DateTime DateOfBirth { get; private set; }
+        internal static int TotalCount;
 
+        internal Student(string first, string last, DateTime dateOfBirth)
+            : base(first, last, dateOfBirth)
+        {
+            TotalCount = TotalCount + 1;
+        }
+    }
+
+    internal class Teacher : Person
+    {
         internal Teacher(string first, string last, DateTime dateOfBirth)
-        {
-            this.FirstName = first;
-            this.LastName = last;
-            this.DateOfBirth = dateOfBirth;
-        }
-
-        public override string ToString()
-        {
-            return String.Format("{0} {1}", FirstName, LastName);
-        }
+            : base(first, last, dateOfBirth)
+        { }
     }
 
     internal class UProgram
