@@ -31,6 +31,11 @@ namespace Module6
         {
             TotalCount = TotalCount + 1;
         }
+
+        internal string Learn()
+        {
+            return this.ToString() + " is learning.";
+        }
     }
 
     internal class Teacher : Person
@@ -38,6 +43,11 @@ namespace Module6
         internal Teacher(string first, string last, DateTime dateOfBirth)
             : base(first, last, dateOfBirth)
         { }
+
+        internal string Teach()
+        {
+            return this.ToString() + " is teaching.";
+        }
     }
 
     internal class UProgram
