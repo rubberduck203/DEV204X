@@ -146,17 +146,15 @@ namespace Module7
         internal ArrayList Students { get; set; }
 
         internal Course(string name, string building, string room, Teacher[] teachers)
+            : this(name, building, room, teachers, new Student[]{ })
+        { }
+
+        internal Course(string name, string building, string room, Teacher[] teachers, Student[] students)
         {
             this.Name = name;
             this.Building = building;
             this.Room = room;
             this.Teachers = teachers;
-            this.Students = new ArrayList();
-        }
-
-        internal Course(string name, string building, string room, Teacher[] teachers, Student[] students)
-            :this(name, building, room, teachers)
-        {
             this.Students = new ArrayList(students);
         }
 
