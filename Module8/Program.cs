@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -87,13 +86,13 @@ namespace Module7
     {
         internal static int TotalCount;
 
-        internal Stack Grades { get; private set; }
+        internal Stack<double> Grades { get; private set; }
 
         internal Student(string first, string last, DateTime dateOfBirth)
             : base(first, last, dateOfBirth)
         {
             TotalCount = TotalCount + 1;
-            this.Grades = new Stack();
+            this.Grades = new Stack<double>();
         }
 
         internal string Learn()
@@ -142,22 +141,24 @@ namespace Module7
         internal string Name { get; set; }
         internal string Building { get; set; }
         internal string Room { get; set; }
-        internal Teacher[] Teachers { get; set; }//A list would be better, but requirements call for an array.
-        internal ArrayList Students { get; set; }
+        internal List<Teacher> Teachers { get; set; }
+        internal List<Student> Students { get; set; }
 
-        internal Course(string name, string building, string room, Teacher[] teachers)
+        internal Course(string name, string building, string room)
+            :this(name, building, room, new List<Teacher>(), new List<Student>())
+        { }
+
+        internal Course(string name, string building, string room, IEnumerable<Teacher> teachers)
+            :this(name, building, room, teachers, new List<Student>())
+        { }
+
+        internal Course(string name, string building, string room, IEnumerable<Teacher> teachers, IEnumerable<Student> students)
         {
             this.Name = name;
             this.Building = building;
             this.Room = room;
-            this.Teachers = teachers;
-            this.Students = new ArrayList();
-        }
-
-        internal Course(string name, string building, string room, Teacher[] teachers, Student[] students)
-            :this(name, building, room, teachers)
-        {
-            this.Students = new ArrayList(students);
+            this.Teachers = teachers.ToList();
+            this.Students = students.ToList();
         }
 
         internal void ListStudents()
@@ -168,12 +169,12 @@ namespace Module7
             Console.WriteLine("Students in {0}", this.Name);
             Console.WriteLine("-------------------------------------");
 
-            foreach(Student student in this.Students)
+            foreach (Student student in this.Students)
             {
                 Console.WriteLine(student.ToString());
             }
 
-            Console.WriteLine(); 
+            Console.WriteLine();
         }
 
         public override string ToString()
@@ -213,6 +214,6 @@ namespace Module7
         }
     }
 
-#endregion 
+    #endregion
 
 }
