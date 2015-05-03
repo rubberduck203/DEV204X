@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mod_9_Homework
+namespace Module9
 {
     internal class Student
     {

@@ -7,7 +7,7 @@
     <ProjectGuid>{B45528C4-AACD-41BA-BC4A-F109E5EDB024}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mod_9_Homework</RootNamespace>
+    <RootNamespace>Module9</RootNamespace>
     <AssemblyName>Mod_9_Homework</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
