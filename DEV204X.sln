@@ -23,9 +23,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module8", "Module8\Module8.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module9", "Module9\Module9.csproj", "{B45528C4-AACD-41BA-BC4A-F109E5EDB024}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestrictionOperators", "LINQ - Restriction Operators\C#\RestrictionOperators\RestrictionOperators.csproj", "{EF74D02F-B99F-470F-B27C-8B83961E9940}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestrictionOperators", "RestrictionOperators\RestrictionOperators.csproj", "{EF74D02F-B99F-470F-B27C-8B83961E9940}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderingOperators", "LINQ - Ordering Operators\C#\OrderingOperators\OrderingOperators.csproj", "{05350A97-9D66-40BC-90B5-BCD0DCFE1AAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderingOperators", "OrderingOperators\OrderingOperators.csproj", "{05350A97-9D66-40BC-90B5-BCD0DCFE1AAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
