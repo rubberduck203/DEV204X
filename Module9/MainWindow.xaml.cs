@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Mod_9_Homework
 {
@@ -20,17 +9,17 @@ namespace Mod_9_Homework
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Student> _students;
+        private readonly List<Student> _students;
         private int _currentIndex;
 
-        private const int startIndex = -1; //use an out of bounds index to reset and adjust for first item added
+        private const int StartIndex = -1; //use an out of bounds index to reset and adjust for first item added
 
         public MainWindow()
         {
             InitializeComponent();
 
             _students = new List<Student>();
-            _currentIndex = startIndex;
+            _currentIndex = StartIndex;
 
             this.btnCreateStudent.Click += btnCreateStudent_Click;
             this.btnNext.Click += btnNext_Click;
@@ -57,10 +46,17 @@ namespace Mod_9_Homework
 
         void DisplayCurrentStudent()
         {
-            if (_currentIndex > startIndex && _currentIndex < _students.Count)
+            // adjust index to "wrap around" the _students list
+            if (_currentIndex >= _students.Count)
             {
-                DisplayStudent(_students.ElementAt(_currentIndex));
+                _currentIndex = 0;
             }
+            else if (_currentIndex < 0)
+            {
+                _currentIndex = _students.Count - 1;
+            }
+
+            DisplayStudent(_students.ElementAt(_currentIndex));
         }
 
         void DisplayStudent(Student student)
@@ -72,7 +68,7 @@ namespace Mod_9_Homework
 
         Student CreateStudent()
         {
-            _currentIndex = startIndex; 
+            _currentIndex = StartIndex; 
             return new Student(this.txtFirstName.Text, this.txtLastName.Text, this.txtCity.Text);
         }
 
