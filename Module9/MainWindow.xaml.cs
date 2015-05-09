@@ -56,7 +56,10 @@ namespace Module9
                 _currentIndex = _students.Count - 1;
             }
 
-            DisplayStudent(_students.ElementAt(_currentIndex));
+            if (_students.Any())
+            {
+                DisplayStudent(_students.ElementAt(_currentIndex));
+            }
         }
 
         void DisplayStudent(Student student)
