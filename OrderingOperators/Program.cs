@@ -15,42 +15,42 @@ namespace OrderingOperators
 
             //Comment or uncomment the method calls below to run or not
 
-              samples.Linq28(); // This sample uses orderby to sort a list of words alphabetically
+            //samples.Linq28(); // This sample uses orderby to sort a list of words alphabetically
 
             //samples.Linq29(); // This sample uses orderby to sort a list of words by length
 
             //samples.Linq30(); // This sample uses orderby to sort a list of products by name. Use the \"descending\" 
-                                // keyword at the end of the clause to perform a reverse ordering
+            // keyword at the end of the clause to perform a reverse ordering
 
             //samples.Linq31(); // This sample uses an  OrderBy clause with a custom comparer to do a case-insensitive 
-                                // sort of the words in an array
+            // sort of the words in an array
 
-            //samples.Linq32(); // This sample uses  orderby and  descending to sort a list of doubles from highest to 
-                                // lowest
+            samples.Linq32(); // This sample uses  orderby and  descending to sort a list of doubles from highest to 
+            // lowest
 
             //samples.Linq33(); // This sample uses  orderby to sort a list of products by units in stock from highest 
-                                // to lowest
+            // to lowest
 
             //samples.Linq34(); // This sample uses method syntax to call OrderByDescending  because it enables you to 
-                                // use a custom comparer
+            // use a custom comparer
 
             //samples.Linq35(); // This sample uses a compound  orderby to  sort a list of digits,  first by length of 
-                                // their name, and then alphabetically by the name itself
+            // their name, and then alphabetically by the name itself
 
             //samples.Linq36(); // The first query in this sample uses method syntax to call OrderBy and ThenBy with a 
-                                // custom comparer to sort first by word length and then by a case-insensitive sort of 
-                                // the words in an array.  The second two queries show another way to perform the same 
-                                // task
+            // custom comparer to sort first by word length and then by a case-insensitive sort of 
+            // the words in an array.  The second two queries show another way to perform the same 
+            // task
 
             //samples.Linq37(); // This sample uses a compound  orderby to sort a list of products,  first by category, 
-                                // and then by unit price, from highest to lowest
+            // and then by unit price, from highest to lowest
 
             //samples.Linq38(); // This sample uses an OrderBy and a ThenBy clause with a custom comparer to sort first 
-                                // by word length and  then by a case-insensitive  descending  sort of  the words in an 
-                                // array
+            // by word length and  then by a case-insensitive  descending  sort of  the words in an 
+            // array
 
             //samples.Linq39(); // This sample uses Reverse to  create a list of  all digits in the  array whose second 
-                                // letter is 'i' that is reversed from the order in the original array
+            // letter is 'i' that is reversed from the order in the original array
         }
 
         public class Product
@@ -112,6 +112,11 @@ namespace OrderingOperators
                 //TODO: Enter code here to order products by name
                 // You don't need to write code to output these values as this next line of code does it for you
 
+                var sortedProducts =
+                    from prod in products
+                    orderby prod.ProductName
+                    select prod;
+
                 ObjectDumper.Write(sortedProducts);
             }
 
@@ -144,6 +149,11 @@ namespace OrderingOperators
                 double[] doubles = { 1.7, 2.3, 1.9, 4.1, 2.9 };
 
                 //TODO: Enter code here to order this list in descending order
+
+                var sortedDoubles =
+                    from dub in doubles
+                    orderby dub descending
+                    select dub;
 
                 Console.WriteLine("The doubles from highest to lowest:");
                 foreach (var d in sortedDoubles)
