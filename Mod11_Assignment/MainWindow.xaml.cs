@@ -37,8 +37,13 @@ namespace Mod11_Assignment
             newStudent.LastName = txtLastName.Text;
             newStudent.City = txtCity.Text;
 
-            var task = new Task(() => AddToCollection(newStudent));
-            task.Start();
+            //// This is how the class showed us to do it.
+            //var task = new Task(() => AddToCollection(newStudent));
+            //task.Start();
+
+            // But Task.Run creates the task and starts it all at once. 
+            // Also, since we're not returning anything, there's no need to keep a reference to the task.
+            Task.Run(() => AddToCollection(newStudent));
 
             ClearForm();
         }
