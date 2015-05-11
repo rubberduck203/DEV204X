@@ -42,22 +42,22 @@ namespace Mod12_Homework
             string filePath = @"SampleFile.txt";
             string text = txtContents.Text;
 
-            WriteText(filePath, text);
+            Task.Run(()=> WriteTextAsync(filePath, text));
         }
 
-        private void WriteText(string filePath, string text)
+        private async Task WriteTextAsync(string filePath, string text)
         {
             byte[] encodedText = Encoding.Unicode.GetBytes(text);
 
             using (FileStream sourceStream = new FileStream(filePath,
                 FileMode.Append, FileAccess.Write, FileShare.None,
-                bufferSize: 4096))
+                bufferSize: 4096, useAsync:true))
             {
-                sourceStream.Write(encodedText, 0, encodedText.Length);
+                await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
             };
         }
 
-        public void ReadFile()
+        public async void ReadFile()
         {
             string filePath = @"SampleFile.txt";
 
@@ -69,8 +69,7 @@ namespace Mod12_Homework
             {
                 try
                 {
-                    string text = ReadText(filePath);
-                    txtContents.Text = text;
+                    txtContents.Text = await ReadTextAsync(filePath);
                 }
                 catch (Exception ex)
                 {
@@ -79,24 +78,29 @@ namespace Mod12_Homework
             }
         }
 
-        private string ReadText(string filePath)
+        private async Task<string> ReadTextAsync(string filePath)
         {
-            using (FileStream sourceStream = new FileStream(filePath,
-                FileMode.Open, FileAccess.Read, FileShare.Read,
-                bufferSize: 4096))
+            return await Task.Run<string>(() =>
             {
-                StringBuilder sb = new StringBuilder();
-
-                byte[] buffer = new byte[0x1000];
-                int numRead;
-                while ((numRead = sourceStream.Read(buffer, 0, buffer.Length)) != 0)
+                using (FileStream sourceStream = new FileStream(filePath,
+                    FileMode.Open, FileAccess.Read, FileShare.Read,
+                    bufferSize: 4096, useAsync: true))
                 {
-                    string text = Encoding.Unicode.GetString(buffer, 0, numRead);
-                    sb.Append(text);
-                }
+                    StringBuilder sb = new StringBuilder();
 
-                return sb.ToString();
-            }
+                    byte[] buffer = new byte[0x1000];
+                    int numRead;
+                    while ((numRead = sourceStream.Read(buffer, 0, buffer.Length)) != 0)
+                    {
+                        string text = Encoding.Unicode.GetString(buffer, 0, numRead);
+                        sb.Append(text);
+                    }
+
+                    System.Threading.Thread.Sleep(3000);
+
+                    return sb.ToString();
+                }
+            });
         }
     }
 }
