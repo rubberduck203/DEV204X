@@ -53,6 +53,7 @@ namespace Mod12_Homework
                 FileMode.Append, FileAccess.Write, FileShare.None,
                 bufferSize: 4096, useAsync:true))
             {
+                System.Threading.Thread.Sleep(3000);
                 await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
             };
         }
@@ -80,7 +81,7 @@ namespace Mod12_Homework
 
         private async Task<string> ReadTextAsync(string filePath)
         {
-            return await Task.Run<string>(() =>
+            return await Task.Run<string>(async() =>
             {
                 using (FileStream sourceStream = new FileStream(filePath,
                     FileMode.Open, FileAccess.Read, FileShare.Read,
@@ -90,7 +91,7 @@ namespace Mod12_Homework
 
                     byte[] buffer = new byte[0x1000];
                     int numRead;
-                    while ((numRead = sourceStream.Read(buffer, 0, buffer.Length)) != 0)
+                    while ((numRead = await sourceStream.ReadAsync(buffer, 0, buffer.Length)) != 0)
                     {
                         string text = Encoding.Unicode.GetString(buffer, 0, numRead);
                         sb.Append(text);
