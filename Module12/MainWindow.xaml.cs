@@ -53,7 +53,7 @@ namespace Mod12_Homework
                 FileMode.Append, FileAccess.Write, FileShare.None,
                 bufferSize: 4096, useAsync:true))
             {
-                System.Threading.Thread.Sleep(3000);
+                System.Threading.Thread.Sleep(3000); //simulate long runnign process
                 await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
             };
         }
@@ -97,7 +97,7 @@ namespace Mod12_Homework
                         sb.Append(text);
                     }
 
-                    System.Threading.Thread.Sleep(3000);
+                    System.Threading.Thread.Sleep(3000); //simulate long running process
 
                     return sb.ToString();
                 }
