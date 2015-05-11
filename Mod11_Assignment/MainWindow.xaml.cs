@@ -36,9 +36,11 @@ namespace Mod11_Assignment
             newStudent.FirstName = txtFirstName.Text;
             newStudent.LastName = txtLastName.Text;
             newStudent.City = txtCity.Text;
-            ClearForm();
 
-            AddToCollection(newStudent);
+            var task = new Task(() => AddToCollection(newStudent));
+            task.Start();
+
+            ClearForm();
         }
 
         
